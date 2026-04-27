@@ -3,7 +3,7 @@ import json
 import time
 from datetime import datetime
 import torch
-from transformers import AutoProcessor
+from transformers import Qwen2VLProcessor
 from qwen_vl_utils import process_vision_info
 from eval.qwen2_5_vl import Qwen2_5_VLForConditionalGeneration
 
@@ -36,7 +36,7 @@ model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
 # model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
 #     MODEL_PATH, torch_dtype=torch.bfloat16, attn_implementation="sdpa", device_map="auto",
 # )
-processor = AutoProcessor.from_pretrained(MODEL_PATH)
+processor = Qwen2VLProcessor.from_pretrained(MODEL_PATH)
 print("✓ 模型加载完成")
 
 # questions = [
